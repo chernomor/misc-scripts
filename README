@@ -1,3 +1,19 @@
 Miscellaneous scripts
+=====================
 
 * class.PinbaTimer.php     - wrapper for pinba_flush (restart running timers after flush)
+* snapshots.mon.sh         - monitoring scripts for LVM snapshots allocation size. Send message to jabber.
+
+Usage
+=====
+
+snapshots.mon.sh
+----------------
+	Syntax: snapshots.mon.sh <jabber recipient> [<volume threshold (percents)> [<volume group>]]
+
+	Send message to jabber://admin@example.com if field "Allocated to snapshot" from lvdisplay output more then 70%:
+	# snapshots.mon.sh admin@example.com 70
+
+	Monitor snapshots in volume group vg00:
+	# snapshots.mon.sh admin@example.com 70 vg00
+
